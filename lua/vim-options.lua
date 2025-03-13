@@ -8,6 +8,12 @@ vim.g.mapleader = " "
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- Indent lines
+vim.keymap.set("n", "<Tab>", ">>", { desc = "Indent line" })
+vim.keymap.set("n", "<S-Tab>", "<<", { desc = "Outdent line" })
+vim.keymap.set("v", "<Tab>", ">gv", { desc = "Indent selected lines" })
+vim.keymap.set("v", "<S-Tab>", "<gv", { desc = "Outdent selected lines" })
+
 -- Neovim Keybinds
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
