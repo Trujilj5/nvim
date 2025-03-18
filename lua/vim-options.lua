@@ -52,3 +52,11 @@ vim.keymap.set("n", "<leader>8", "<Cmd>BufferGoto 8<CR>", { desc = "Go to buffer
 vim.keymap.set("n", "<leader>9", "<Cmd>BufferGoto 9<CR>", { desc = "Go to buffer 9" })
 vim.keymap.set("n", "<leader>0", "<Cmd>BufferLast<CR>", { desc = "Go to last buffer" })
 vim.keymap.set("n", "<leader>x", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
+
+-- Filetype override for .gitlab-ci.yml
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = ".gitlab-ci.yml",
+  callback = function()
+    vim.bo.filetype = "yaml.gitlab"
+  end,
+})
